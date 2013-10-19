@@ -1,7 +1,7 @@
 #
-class ntp::install inherits ntp {
+class dnsmasq::install inherits dnsmasq {
 
-  package { 'ntp':
+  package { 'dnsmasq':
     ensure => $package_ensure,
     name   => $package_name,
   }
