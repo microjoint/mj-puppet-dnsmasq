@@ -1,4 +1,3 @@
-#
 class dnsmasq::service inherits dnsmasq {
 
   if ! ($service_ensure in [ 'running', 'stopped' ]) {

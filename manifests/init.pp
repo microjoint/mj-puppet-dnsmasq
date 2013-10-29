@@ -22,7 +22,6 @@ class dnsmasq (
   include '::dnsmasq::config'
   include '::dnsmasq::service'
 
-  Class['::dnsmasq::install'] -> Class['::dnsmasq::config']
-    ~> Class['::dnsmasq::service']
+  Class['::dnsmasq::install'] -> Class['::dnsmasq::config'] ~> Class['::dnsmasq::service']
 
 }

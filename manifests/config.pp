@@ -1,4 +1,3 @@
-#
 class dnsmasq::config inherits dnsmasq {
 
   file { $config:
