@@ -1,13 +1,13 @@
-#puppet-dnsmasq
+#mj-puppet-dnsmasq
 
 ####Table of Contents
 
 1. [Overview](#overview)
 2. [Module Description - What the module does and why it is useful](#module-description)
-3. [Setup - The basics of getting started with ntp](#setup)
-    * [What ntp affects](#what-ntp-affects)
+3. [Setup - The basics of getting started with dnsmasq](#setup)
+    * [What dnsmasq affects](#what-dnsmasq-affects)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with ntp](#beginning-with-ntp)
+    * [Beginning with dnsmasq](#beginning-with-dnsmasq)
 4. [Usage - Configuration options and additional functionality](#usage)
 5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -64,7 +64,7 @@ class { '::dnsmasq':
 
 ###Parameters
 
-The following parameters are available in the ntp module
+The following parameters are available in the dnsmasq module
 
 ####`config`
 
@@ -97,7 +97,7 @@ This selects if puppet should manage the service in the first place.
 
 ####`service_name`
 
-This selects the name of the ntp service for puppet to manage.
+This selects the name of the dnsmasq service for puppet to manage.
 
 
 ##Limitations
@@ -105,3 +105,4 @@ This selects the name of the ntp service for puppet to manage.
 The module has been tested on:
 
 * Arch Linux
+* Debian

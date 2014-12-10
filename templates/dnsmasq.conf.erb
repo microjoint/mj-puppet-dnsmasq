@@ -8,11 +8,11 @@
 # (53). Setting this to zero completely disables DNS function,
 # leaving only DHCP and/or TFTP.
 #port=5353
-port=<%= port %>
+port=<%= @port -%>
 
 # The following two options make you a better netizen, since they
 # tell dnsmasq to filter out queries which the public DNS cannot
-# answer, and which load the servers (especially the root servers)
+#Archlinux answer, and which load the servers (especially the root servers)
 # unnecessarily. If you have a dial-on-demand link they also stop
 # these requests from bringing up the link unnecessarily.
 
@@ -32,7 +32,7 @@ port=<%= port %>
 
 # Change this line if you want dns to get its upstream servers from
 # somewhere other that /etc/resolv.conf
-#resolv-file=
+#resolv-file=/etc/resolv.conf.2
 
 # By  default,  dnsmasq  will  send queries to any of the upstream
 # servers it knows about and tries to favour servers to are  known
@@ -59,8 +59,8 @@ no-poll
 # Add other name servers here, with domain specs if they are for
 # non-public domains.
 #server=/localnet/192.168.0.1
-<% [@servers].flatten.each do |server| -%>
-    server=<%= server %>
+<% [@dns_servers].flatten.each do |server| -%>
+server=<%= server %>
 <% end -%>
 
 # Example of routing PTR queries to nameservers: this will send all
@@ -530,7 +530,7 @@ no-poll
 #dhcp-script=/bin/echo
 
 # Set the cachesize here.
-#cache-size=150
+cache-size=<%= @cache_size %>
 
 # If you want to disable negative caching, uncomment this.
 #no-negcache
