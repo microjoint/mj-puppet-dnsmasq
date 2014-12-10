@@ -10,7 +10,7 @@ class dnsmasq (
   $package_name      = $dnsmasq::params::package_name,
   $config            = $dnsmasq::params::config,
   $service_name      = $dnsmasq::params::service_name,
-  $cache_size        = hiera(dnsmasq::cache_size, 2048),
+  $cache_size        = hiera(dnsmasq::cache_size, 8192),
 
 ) inherits dnsmasq::params {
 
